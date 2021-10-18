@@ -1,0 +1,22 @@
+<p>login success!</p>
+<div *ngIf=user>
+    <p>User Name:{{user.username}}</p>
+    <p>EMAIL:{{user.email}}</p>
+    <p>User type:{{user.usertype}}</p>
+    <div *ngIf=isTypeA>
+        <p>any user could check users of type A</p> <small [routerLink]="['/typeAusers']"><button>Click here to see all TYPE_A users</button> </small>
+    </div>
+    <div *ngIf=isTypeB>
+        <p>only user of type b could check users of type B</p>
+        <small class="float-right" [routerLink]="['/typeBusers']"><button>Click here to see all TYPE_B users</button> </small>
+    </div>
+</div>
+
+<small class="float-right" [routerLink]="['']"><button (click)=logout()>Log Out</button> </small>
+
+<div *ngIf=!user>
+    <p>user logged out</p>
+</div>
+
+
+
